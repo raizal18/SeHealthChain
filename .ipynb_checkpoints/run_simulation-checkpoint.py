@@ -10,10 +10,7 @@ import subprocess
 import time
 
 # os.system('powershell.exe py simulator_config.py')
-try:
-    subprocess.Popen('powershell.exe py simulator_config.py',creationflags=subprocess.CREATE_NEW_CONSOLE)
-except:
-    subprocess.Popen('wt.exe py simulator_config.py',creationflags=subprocess.CREATE_NEW_CONSOLE)
+subprocess.call('powershell.exe py simulator_config.py')
 time.sleep(5)
 
 (CumThroughPut, ThrouputPerNode, userLatencyShard, userlatencyNode, NUMBEROFNODES, NUMBEROFSHARD) = run_simulator()
